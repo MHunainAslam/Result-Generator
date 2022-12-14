@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="./result.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>Result</title>
+    <script>
+
+    </script>
+</head>
+
+<body style="background-color: rgba(0, 0, 0, 0.205);">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="heading">
+                    <h1 class="head">Generate Results For Your School</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="type">
+                <div class="form">
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group">
+                                <label class="form-control">Select Background Color</label>
+                                <div class="input-group-text"><input oninput="getresult()" type="color" id="colorback">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <label class="form-control">Select Tags Color</label>
+                                <div class="input-group-text"><input oninput="getresult()" type="color" id="colortag">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group">
+                                <label class="form-control">Select Text Color</label>
+                                <div class="input-group-text"><input oninput="getresult()" type="color" id="colortext">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group">
+                                <input id="sn" oninput="getresult()" type="text" class="form-control"
+                                    placeholder="Enter Your School name" aria-label="School name">
+                                <div class="input-group-text"><input oninput="getresult()" type="color" id="colorid">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <input id="tl" oninput="getresult()" type="text" class="form-control"
+                                placeholder="Enter Tag Line With Exam Term" aria-label="Tag line">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input id="stname" oninput="getresult()" type="text" class="form-control"
+                                placeholder="Student name" aria-label="Student name">
+                        </div>
+                        <div class="col">
+                            <input id="stfather" oninput="getresult()" type="text" class="form-control"
+                                placeholder="Father name" aria-label="Father name">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input id="rn" oninput="getresult()" type="text" class="form-control"
+                                placeholder="Student Roll Number" aria-label="Roll number">
+                        </div>
+                        <div class="col">
+                            <input id="cn" oninput="getresult()" type="text" class="form-control"
+                                placeholder="Enter Class" aria-label="Class Number">
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div class="col-6">
+                            <input id="totalsub" oninput="mark()" onchange="marks()" type="number" class="form-control"
+                                placeholder="Enter Total Subject Number" aria-label="Total Subject">
+                        </div>
+                    </div> -->
+                    <div class="row">
+
+                        <div class="subject" id="pts">
+
+                            <div class="col">
+                                <div class="input-group" id="one">
+                                    <input id="tc1" onclick="this.value = ''" type="text" class="form-control"
+                                        placeholder="Subject Name">
+                                    <input id="tc2" onclick="this.value = ''" type="number" class="form-control"
+                                        placeholder="Mid-Term">
+                                    <input id="tc3" onclick="this.value = ''" type="number" class="form-control"
+                                        placeholder="Final-Term">
+                                    <input id="tc4" onclick="this.value = ''" type="number" class="form-control"
+                                        placeholder="Other-Marks">
+                                    <input id="tc5" onclick="this.value = ''" type="number" class="form-control"
+                                        placeholder="Total Marks" required>
+                                    <button class="btn btn-success" onclick="marks()" ;>Save</button>
+                                </div>
+                            </div><br>
+                        </div>
+                        <!-- <div class="subject " id="pts2"></div> -->
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <input id="remarks" oninput="getresult()" type="text" class="form-control"
+                                    placeholder="Give Some Remarks To Student">
+                                <div class="input-group-text"><input oninput="getresult()" type="color" id="remaksclr">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <!-- <div class="input-group-text">
+                                    <input id="signaturepic" type="file"  src="" oninput="getresult()">
+                                </div>
+                                <div class="input-group-text">
+                                    <input oninput="getresult()" type="color" id="signaturepicclr">
+                                    <button onclick="signpic()">ok</button>
+                                </div> -->
+                                <input id="signtext" oninput="getresult()" type="text" class="form-control"
+                                    placeholder="School/Collage Stamp/Name or Signature">
+                                <div class="input-group-text"><input oninput="getresult()" type="color"
+                                        id="signatureclr">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="input-group">
+                                <!-- <div class="input-group-text">
+                                    <input type="file" src="" id="signaturepic2" oninput="getresult()">
+                                </div>
+                                <div class="input-group-text">
+                                    <input oninput="getresult()" type="color" id="signaturepicclr2">
+                                </div> -->
+                                <input id="signtext2" oninput="getresult()" type="text" class="form-control"
+                                    placeholder="School/Collage Stamp/Name or Signature">
+                                <div class="input-group-text"><input oninput="getresult()" type="color"
+                                        id="signatureclr2">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- output sec -->
+        <div id="justprint">
+        <div class="return" id="returnid">
+            <div class="form">
+                <div class="row">
+                    <div class="rheading">
+                        <u id="underlineclr">
+                            <h1 class="head" id="psn"></h1>
+                        </u>
+                        <h3 class="taghead" id="ptl"></h3>
+                    </div>
+                </div>
+                <div class="linecss" id="line1"></div>
+                <div class="nameandother">
+                    <div class="row">
+                        <div class="col-5">
+                            <h6 class="detailtag">Name: </h6>
+                            <p class="name" id="pstn"></p>
+
+                        </div>
+                        <div class="col">
+                            <h6 class="detailtag">Guardian/Father Name: </h6>
+                            <p class="name" id="psft"></p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-5">
+                            <h6 class="detailtag">Roll Number: </h6>
+                            <p class="name" id="prn"></p>
+
+                        </div>
+                        <div class="col">
+                            <h6 class="detailtag">Class: </h6>
+                            <p class="name" id="pcn"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="linecss" id="line2"></div>
+            </div>
+
+
+            <div class="container-fluid">
+                <center>
+                    <table class="table" id="marksoutput">
+                        <thead>
+                            
+                            <tr id="tablehead" >
+                                <th class="col">Subject</th>
+                                <th class="col">Mid-term</th>
+                                <th class="col">Final-Term</th>
+                                <th class="col">Other Marks</th>
+                                <th class="col">Total Marks</th>
+                                <th class="col">Obtained Marks</th>
+                                <th class="col">%</th>
+                                <th class="col">Grade</th>
+                                <th class="col">GPA</th>
+                            </tr>
+
+                        </thead>
+                        <thead>
+
+                            <tr id="totaltablehead" class="table-group-divider">
+                                <th class="col"></th>
+                                <th class="col"></th>
+                                <th class="col"></th>
+                                <th class="col"></th>
+                                <th class="col" id="totalmarksumid"></th>
+                                <th class="col" id="obtainedmarksumid"></th>
+                                <th class="col" id="percentagesumid"></th>
+                                <th class="col" id="gradesumid"></th>
+                                <th class="col drak" id="gpasumid"></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </center>
+          
+            <br><br>
+           
+            <div class="row">
+                <div class="remarksoutput">
+                    <h6 id="detailtag">Remarks: </h6>
+                    <p><u id="remarksoutputid"></u></p>
+                </div>
+            </div> <br><br><br>
+            <div class="row">
+
+                <div class="col-3 signboxalignment">
+                    <center>
+                        <p id="signoutimg"></p>
+                        <p id="signoutput"></p>
+                    </center>
+                    <div class="linecss" id="line3"></div>
+                </div>
+                <div class="col-6"></div>
+                <div class="col-3 signboxalignment2">
+                    <center>
+                        <p id="signoutimg2"></p>
+                        <p id="signoutput2"></p>
+                    </center>
+                    <div class="linecss" id="line4"></div>
+                </div>
+            </div>
+            </div>
+            <br>
+            <footer class="footer">
+                <p>&#169; Design by Hunain Aslam</p>
+            </footer>
+        </div>
+    </div>
+        <div class="printsec">
+            <center>
+            <div class="col-6">
+                <div class="row">
+                    <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" class="btn btn-success " onclick="printdiv('justprint')">Print or Save</button>
+                      </div>
+                </div>
+            </div>
+        </center>
+        </div>
+    </div>
+
+</body>
+
+</html>
